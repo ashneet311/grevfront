@@ -5,8 +5,8 @@ const Footer = () => {
         <footer className="p-6 sm:p-10 text-black flex flex-wrap justify-evenly">
             <div className="mb-6 max-w-xs text-center sm:text-left">
                 <img
-                    src="/assets/mainlogo-CvKJyAPs.png"
-                    alt="Hoping Minds"
+                    src="/assets/mainlogo.png"
+                    alt="ptu"
                     className="w-32 sm:w-40 mb-6 sm:mb-10 mx-auto sm:mx-0"
                 />
                 <p className="text-sm sm:text-base">
@@ -39,7 +39,7 @@ const Footer = () => {
                         </a>
                     </li>
                     <li className="mb-2 text-sm sm:text-lg">
-                        <button className="hover:underline">Complaints</button>
+                        <button className="hover:underline">Grievance</button>
                     </li>
                     <li className="mb-2 text-sm sm:text-lg">
                         <button className="hover:underline">Syllabus</button>

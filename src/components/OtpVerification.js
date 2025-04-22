@@ -16,7 +16,7 @@ const OtpVerification = ({ setIsLoggedIn }) => {
     const handleOtpSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post(BASE_URL + '/api/auth/verify', {
+            const response = await axios.post('http://localhost:5000/api/auth//verify', {
                 otp,
                 userId // Pass userId to the verification API
             }, {

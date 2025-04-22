@@ -1,10 +1,46 @@
-import React from 'react'
+import React, { useState } from 'react';
 
 export const Grievance = () => {
+    const [formData, setFormData] = useState({
+        username: 'Ashneetkaur',
+        email: 'ashneet0311@gmail.com',
+        date: '',
+        department: '',
+        problem: '',
+    });
+    const [isSubmitted, setIsSubmitted] = useState(false); // State to track submission
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        // Add your backend API call here
+        console.log('Submitted Data:', formData);
+
+        // Show success notification
+        alert('Complaint submitted successfully!');
+
+        // Update button state
+        setIsSubmitted(true);
+
+        // Optionally, clear the form fields
+        setFormData({
+            username: '',
+            email: '',
+            date: '',
+            department: '',
+            problem: '',
+        });
+    };
+
     return (
         <div className="flex justify-center min-h-screen items-center bg-[#fbfbfb] pt-24">
             <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-1 items-center gap-10 max-w-screen-lg w-full lg:w-5/6 md:w-4/6">
-                <div className="flex flex-col justify-between  md:block w-5/6 mx-auto">
+                <div className="flex flex-col justify-between md:block w-5/6 mx-auto">
                     <div className="max-w-2xl mx-auto text-center">
                         <div className="relative flex justify-center items-center flex-col text-center sm:text-left mb-10 mt-6">
                             <h1 className="font-black text-3xl md:text-4xl text-black">
@@ -22,7 +58,7 @@ export const Grievance = () => {
                             them.
                         </p>
                     </div>
-                    <div className="grid grid-cols-1 gap-2  text-center md:px-0 md:grid-cols-2 justify-center">
+                    <div className="grid grid-cols-1 gap-2 text-center md:px-0 md:grid-cols-2 justify-center">
                         <img
                             src="/assets/complaintImg-CCYCZMTF.png"
                             className="w-full col-start-1 col-span-2"
@@ -35,7 +71,7 @@ export const Grievance = () => {
                             Submit Your Complaint
                         </h1>
                     </div>
-                    <form className="flex flex-col space-y-4">
+                    <form className="flex flex-col space-y-4" onSubmit={handleSubmit}>
                         <div className="flex flex-col">
                             <label htmlFor="username" className="font-semibold">
                                 Username
@@ -45,9 +81,10 @@ export const Grievance = () => {
                                 name="username"
                                 id="username"
                                 autoComplete="off"
-                                required=""
+                                required
                                 className="w-full bg-white p-3 py-2 rounded-[15px] shadow-sm border placeholder:text-gray-500 focus:outline-none focus:border-blue-400"
-                                defaultValue="Akshat Tyagi"
+                                value={formData.username}
+                                onChange={handleChange}
                             />
                         </div>
                         <div className="flex flex-col">
@@ -59,9 +96,10 @@ export const Grievance = () => {
                                 name="email"
                                 id="email"
                                 autoComplete="off"
-                                required=""
+                                required
                                 className="w-full bg-white p-3 py-2 rounded-[15px] shadow-sm border placeholder:text-gray-500 focus:outline-none focus:border-blue-400"
-                                defaultValue="akshatt961@gmail.com"
+                                value={formData.email}
+                                onChange={handleChange}
                             />
                         </div>
                         <div className="flex flex-col">
@@ -73,9 +111,10 @@ export const Grievance = () => {
                                 name="date"
                                 id="date"
                                 autoComplete="off"
-                                required=""
+                                required
                                 className="w-full bg-white p-3 py-2 rounded-[15px] shadow-sm border placeholder:text-gray-500 focus:outline-none focus:border-blue-400"
-                                defaultValue=""
+                                value={formData.date}
+                                onChange={handleChange}
                             />
                         </div>
                         <div className="flex flex-col">
@@ -85,8 +124,10 @@ export const Grievance = () => {
                             <select
                                 name="department"
                                 id="department"
-                                required=""
+                                required
                                 className="w-full bg-white p-3 py-2 rounded-[15px] shadow-sm border placeholder:text-gray-500 focus:outline-none focus:border-blue-400"
+                                value={formData.department}
+                                onChange={handleChange}
                             >
                                 <option value="" className="text-gray-500">
                                     Select Department
@@ -104,26 +145,31 @@ export const Grievance = () => {
                                 name="problem"
                                 id="problem"
                                 autoComplete="off"
-                                required=""
+                                required
                                 cols={30}
                                 rows={2}
                                 placeholder="Describe your issue briefly; the Head of Department (HOD) will review it"
                                 className="w-full bg-white p-3 py-2 rounded-[15px] shadow-sm border placeholder:text-gray-500 focus:outline-none focus:border-blue-400"
-                                defaultValue={""}
+                                value={formData.problem}
+                                onChange={handleChange}
                             />
                         </div>
                         <div>
                             <button
                                 type="submit"
-                                className="block w-full font-bold bg-gradient-to-r from-purple-500 to-red-500 text-white py-3 mt-4 rounded-[15px] transition-transform duration-200 ease-in-out hover:scale-105 active:scale-95"
+                                disabled={isSubmitted} // Disable button after submission
+                                className={`block w-full font-bold ${
+                                    isSubmitted
+                                        ? 'bg-green-500 text-white'
+                                        : 'bg-gradient-to-r from-purple-500 to-red-500 text-white'
+                                } py-3 mt-4 rounded-[15px] transition-transform duration-200 ease-in-out hover:scale-105 active:scale-95`}
                             >
-                                Submit Complaint
+                                {isSubmitted ? 'Submitted' : 'Submit Complaint'}
                             </button>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
-
-    )
-}
+    );
+};

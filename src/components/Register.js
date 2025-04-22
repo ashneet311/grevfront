@@ -21,7 +21,7 @@ export const Register = () => {
         e.preventDefault();
 
         try {
-            const response = await axios.post(BASE_URL + '/api/auth/register', {
+             const response = await axios.post('http://localhost:5000/api/auth/register', {
                 name,
                 rollno,
                 department,

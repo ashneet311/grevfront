@@ -66,10 +66,10 @@ export const Contact = () => {
                                     />
                                 </svg>
                                 <p className="mt-6 text-base font-medium text-gray-900">
-                                    sahiljamwal2720@gmail.com
+                                    ashneetkaur0311@gmail.com
                                 </p>
                                 <p className="mt-1 text-base font-medium text-gray-900">
-                                    bharal224@gmail.com
+                                    ab344@gmail.com
                                 </p>
                             </div>
                         </div>

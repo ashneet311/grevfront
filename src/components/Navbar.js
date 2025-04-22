@@ -29,7 +29,7 @@ function handleLogout(){
                                 <img
                                     src="/assets/mainlogo.png"
                                     alt="Main Logo"
-                                    style={{ height: 50, width: 'auto' }}
+                                    style={{ height: 100, width: 'auto' }}
                                 />
                             </a>
                         </div>
@@ -126,21 +126,21 @@ function handleLogout(){
                                     <a
                                         title="Resources"
                                         className="relative text-base font-medium transition-all duration-200 rounded font-pj text-white before:bg-white before:content-[''] before:absolute before:left-0 before:bottom-0 before:w-full before:h-[2px] before:scale-x-0 hover:before:scale-x-100 before:origin-left before:transition-transform before:duration-300"
-                                        href="/resources"
+                                        href="/Paper"
                                     >
                                         Resources
                                     </a>
                                     <a
                                         title="Blogs"
                                         className="relative text-base font-medium transition-all duration-200 rounded font-pj text-white before:bg-white before:content-[''] before:absolute before:left-0 before:bottom-0 before:w-full before:h-[2px] before:scale-x-0 hover:before:scale-x-100 before:origin-left before:transition-transform before:duration-300"
-                                        href="/blogs"
+                                        href="/BlogPage"
                                     >
                                         Blogs
                                     </a>
                                     <a
                                         title="Complaints"
                                         className="relative text-base font-medium transition-all duration-200 rounded font-pj text-white before:bg-white before:content-[''] before:absolute before:left-0 before:bottom-0 before:w-full before:h-[2px] before:scale-x-0 hover:before:scale-x-100 before:origin-left before:transition-transform before:duration-300"
-                                        href="/complaints"
+                                        href="/Grievance"
                                     >
                                         Complaints
                                     </a>
@@ -177,7 +177,7 @@ function handleLogout(){
                                     <a
                                         title="Dashboard"
                                         className="px-5 py-2 text-base font-semibold leading-7 transition-all duration-200 bg-transparent border border-current rounded-xl font-pj hover:bg-white hover:text-black text-white"
-                                        href="/dashboard"
+                                        href="/Dashboard"
                                     >
                                         Dashboard
                                     </a>
